@@ -17,33 +17,15 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
 - **Logical Uncertainty**: Insufficient evidence — does the compressed context support reasoning?
 
 **PolyCompressor** addresses all three through a progressive, uncertainty-aware distillation pipeline:
-┌─────────────────────────────────────────────────────────────────┐
-│ POLYCOMPRESSOR FRAMEWORK │
-├─────────────────────────────────────────────────────────────────┤
-│ │
-│ Phase I: Epistemic Uncertainty Reduction │
-│ ┌─────────────────────────────────────────────────────────┐ │
-│ │ Multi-Query Generator (MQG) │ │
-│ │ • Expands ambiguous queries into intent distributions │ │
-│ │ • Generates K query variants with importance weights │ │
-│ └─────────────────────────────────────────────────────────┘ │
-│ ↓ │
-│ Phase II: Aleatoric Uncertainty Reduction │
-│ ┌─────────────────────────────────────────────────────────┐ │
-│ │ Hierarchical Evidence Refiner │ │
-│ │ • Macro-pruning: MVIG (Multi-View Information Gain) │ │
-│ │ • Micro-pruning: Semantic Projection │ │
-│ └─────────────────────────────────────────────────────────┘ │
-│ ↓ │
-│ Phase III: Logical Uncertainty Reduction │
-│ ┌─────────────────────────────────────────────────────────┐ │
-│ │ Dynamic Awareness Knowledge Extractor (DAKE) │ │
-│ │ • Infers logical requirements from query │ │
-│ │ • Ensures causal sufficiency and logical coherence │ │
-│ └─────────────────────────────────────────────────────────┘ │
-│ ↓ │
-│ Concise, Sufficient Context │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    A[User Query] --> B[Multi-Query Generator<br/>MQG]
+    B --> C[Epistemic Uncertainty Reduction<br/>Query Variants with Weights]
+    C --> D[Hierarchical Evidence Refiner]
+    D --> E[Macro-pruning: MVIG<br/>Multi-View Information Gain]
+    E --> F[Micro-pruning: Semantic Projection]
+    F --> G[Logical Uncertainty Reduction<br/>DAKE]
+    G --> H[Concise, Sufficient Context]
 
 ## ✨ Key Features
 
