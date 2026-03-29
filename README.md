@@ -17,6 +17,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
 
 **PolyCompressor** addresses all three through a progressive, uncertainty-aware distillation pipeline:
 
+![PolyCompressor Pipeline](images/pipeline.png)
 
 ## ✨ Key Features
 
