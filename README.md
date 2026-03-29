@@ -29,16 +29,135 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
 
 ## 📊 Results
 
-| Methods            | HotpotQA CR | HotpotQA EM | HotpotQA F1 | 2Wiki CR | 2Wiki EM | 2Wiki F1 | MuSiQue CR | MuSiQue EM | MuSiQue F1 | NQ CR | NQ EM | NQ F1 | TriviaQA CR | TriviaQA EM | TriviaQA F1 |
-|--------------------|-------------|-------------|-------------|----------|----------|----------|------------|------------|------------|-------|-------|-------|-------------|-------------|-------------|
-| Direct             | –           | 19.32       | 26.87       | –        | 18.20    | 23.17    | –          | 2.77       | 8.99       | –     | 21.04 | 31.38 | –           | 55.01       | 61.87       |
-| All Documents      | 1.00        | 26.97       | 38.17       | 1.00     | 14.00    | 24.83    | 1.00       | 13.94      | 24.57      | 1.00  | 33.99 | 47.55 | 1.00        | 60.98       | 70.83       |
-| Top 5 Docs         | 5.80        | 26.30       | 37.18       | 6.01     | 11.60    | 22.42    | 4.00       | 6.74       | 13.36      | 5.80  | 32.36 | 45.54 | 5.80        | 57.69       | 67.50       |
-| Top 10 Docs        | 2.90        | 27.21       | 38.54       | 3.00     | 13.40    | 23.97    | 2.00       | 10.50      | 19.43      | 2.90  | 33.24 | 47.59 | 2.90        | 59.85       | 69.46       |
-| PolyCompressor(Ours)| 41.57       | 30.45       | 41.36       | 50.31    | 21.60    | 29.19    | 24.07      | 23.79      | 34.40      | 41.79 | 34.00 | 46.30 | 40.04       | 61.68       | 70.39       |
-
-*Each cell reports Compression Rate (CR) / Exact Match (EM) / F1. CR is in × (original tokens / compressed tokens). “—” indicates no compression applied (CR not applicable).*
-
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Direct</th>
+      <th>All Documents</th>
+      <th>Top 5 Docs</th>
+      <th>Top 10 Docs</th>
+      <th>PolyCompressor (Ours)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- HotpotQA -->
+    <tr>
+      <td rowspan="3">HotpotQA</td>
+      <td>–</td>
+      <td>1.00</td>
+      <td>5.80</td>
+      <td>2.90</td>
+      <td><strong>41.57</strong></td>
+    </tr>
+    <tr>
+      <td>19.32</td>
+      <td>26.97</td>
+      <td>26.30</td>
+      <td><u>27.21</u></td>
+      <td><strong>30.45</strong></td>
+    </tr>
+    <tr>
+      <td>26.87</td>
+      <td>38.17</td>
+      <td>37.18</td>
+      <td><u>38.54</u></td>
+      <td><strong>41.36</strong></td>
+    </tr>
+    <!-- 2Wiki -->
+    <tr>
+      <td rowspan="3">2Wiki</td>
+      <td>–</td>
+      <td>1.00</td>
+      <td><u>6.01</u></td>
+      <td>3.00</td>
+      <td><strong>50.31</strong></td>
+    </tr>
+    <tr>
+      <td><u>18.20</u></td>
+      <td>14.00</td>
+      <td>11.60</td>
+      <td>13.40</td>
+      <td><strong>21.60</strong></td>
+    </tr>
+    <tr>
+      <td>23.17</td>
+      <td><u>24.83</u></td>
+      <td>22.42</td>
+      <td>23.97</td>
+      <td><strong>29.19</strong></td>
+    </tr>
+    <!-- MuSiQue -->
+    <tr>
+      <td rowspan="3">MuSiQue</td>
+      <td>–</td>
+      <td>1.00</td>
+      <td><u>4.00</u></td>
+      <td>2.00</td>
+      <td><strong>24.07</strong></td>
+    </tr>
+    <tr>
+      <td>2.77</td>
+      <td><u>13.94</u></td>
+      <td>6.74</td>
+      <td>10.50</td>
+      <td><strong>23.79</strong></td>
+    </tr>
+    <tr>
+      <td>8.99</td>
+      <td><u>24.57</u></td>
+      <td>13.36</td>
+      <td>19.43</td>
+      <td><strong>34.40</strong></td>
+    </tr>
+    <!-- NQ -->
+    <tr>
+      <td rowspan="3">NQ</td>
+      <td>–</td>
+      <td>1.00</td>
+      <td><u>5.80</u></td>
+      <td>2.90</td>
+      <td><strong>41.79</strong></td>
+    </tr>
+    <tr>
+      <td>21.04</td>
+      <td><u>33.99</u></td>
+      <td>32.36</td>
+      <td>33.24</td>
+      <td><strong>34.00</strong></td>
+    </tr>
+    <tr>
+      <td>31.38</td>
+      <td><u>47.55</u></td>
+      <td>45.54</td>
+      <td><strong>47.59</strong></td>
+      <td>46.30</td>
+    </tr>
+    <!-- TriviaQA -->
+    <tr>
+      <td rowspan="3">TriviaQA</td>
+      <td>–</td>
+      <td>1.00</td>
+      <td><u>5.80</u></td>
+      <td>2.90</td>
+      <td><strong>40.04</strong></td>
+    </tr>
+    <tr>
+      <td>55.01</td>
+      <td><u>60.98</u></td>
+      <td>57.69</td>
+      <td>59.85</td>
+      <td><strong>61.68</strong></td>
+    </tr>
+    <tr>
+      <td>61.87</td>
+      <td><strong>70.83</strong></td>
+      <td>67.50</td>
+      <td>69.46</td>
+      <td><u>70.39</u></td>
+    </tr>
+  </tbody>
+</table>
 *PolyCompressor achieves superior compression while maintaining or improving answer quality across all benchmarks.*
 
 ### Document Reranking (NQ, Recall@1)
