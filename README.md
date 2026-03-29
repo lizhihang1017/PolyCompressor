@@ -29,9 +29,10 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
 
 ## 📊 Results
 
-<table>
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; text-align: center;">
   <thead>
     <tr>
+      <th>Dataset</th>
       <th>Metric</th>
       <th>Direct</th>
       <th>All Documents</th>
@@ -44,13 +45,15 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
     <!-- HotpotQA -->
     <tr>
       <td rowspan="3">HotpotQA</td>
+      <td>CR</td>
       <td>–</td>
       <td>1.00</td>
-      <td>5.80</td>
+      <td><u>5.80</u></td>
       <td>2.90</td>
       <td><strong>41.57</strong></td>
     </tr>
     <tr>
+      <td>EM</td>
       <td>19.32</td>
       <td>26.97</td>
       <td>26.30</td>
@@ -58,6 +61,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
       <td><strong>30.45</strong></td>
     </tr>
     <tr>
+      <td>F1</td>
       <td>26.87</td>
       <td>38.17</td>
       <td>37.18</td>
@@ -67,6 +71,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
     <!-- 2Wiki -->
     <tr>
       <td rowspan="3">2Wiki</td>
+      <td>CR</td>
       <td>–</td>
       <td>1.00</td>
       <td><u>6.01</u></td>
@@ -74,6 +79,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
       <td><strong>50.31</strong></td>
     </tr>
     <tr>
+      <td>EM</td>
       <td><u>18.20</u></td>
       <td>14.00</td>
       <td>11.60</td>
@@ -81,6 +87,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
       <td><strong>21.60</strong></td>
     </tr>
     <tr>
+      <td>F1</td>
       <td>23.17</td>
       <td><u>24.83</u></td>
       <td>22.42</td>
@@ -90,6 +97,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
     <!-- MuSiQue -->
     <tr>
       <td rowspan="3">MuSiQue</td>
+      <td>CR</td>
       <td>–</td>
       <td>1.00</td>
       <td><u>4.00</u></td>
@@ -97,6 +105,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
       <td><strong>24.07</strong></td>
     </tr>
     <tr>
+      <td>EM</td>
       <td>2.77</td>
       <td><u>13.94</u></td>
       <td>6.74</td>
@@ -104,6 +113,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
       <td><strong>23.79</strong></td>
     </tr>
     <tr>
+      <td>F1</td>
       <td>8.99</td>
       <td><u>24.57</u></td>
       <td>13.36</td>
@@ -113,6 +123,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
     <!-- NQ -->
     <tr>
       <td rowspan="3">NQ</td>
+      <td>CR</td>
       <td>–</td>
       <td>1.00</td>
       <td><u>5.80</u></td>
@@ -120,6 +131,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
       <td><strong>41.79</strong></td>
     </tr>
     <tr>
+      <td>EM</td>
       <td>21.04</td>
       <td><u>33.99</u></td>
       <td>32.36</td>
@@ -127,6 +139,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
       <td><strong>34.00</strong></td>
     </tr>
     <tr>
+      <td>F1</td>
       <td>31.38</td>
       <td><u>47.55</u></td>
       <td>45.54</td>
@@ -136,6 +149,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
     <!-- TriviaQA -->
     <tr>
       <td rowspan="3">TriviaQA</td>
+      <td>CR</td>
       <td>–</td>
       <td>1.00</td>
       <td><u>5.80</u></td>
@@ -143,6 +157,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
       <td><strong>40.04</strong></td>
     </tr>
     <tr>
+      <td>EM</td>
       <td>55.01</td>
       <td><u>60.98</u></td>
       <td>57.69</td>
@@ -150,6 +165,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
       <td><strong>61.68</strong></td>
     </tr>
     <tr>
+      <td>F1</td>
       <td>61.87</td>
       <td><strong>70.83</strong></td>
       <td>67.50</td>
@@ -158,6 +174,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
     </tr>
   </tbody>
 </table>
+
 *PolyCompressor achieves superior compression while maintaining or improving answer quality across all benchmarks.*
 
 ### Document Reranking (NQ, Recall@1)
