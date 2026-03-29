@@ -29,6 +29,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
 
 ## 📊 Results
 
+### Main Results
 <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; text-align: center;">
   <thead>
     <tr>
@@ -177,27 +178,22 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
 
 *PolyCompressor achieves superior compression while maintaining or improving answer quality across all benchmarks.*
 
-### Document Reranking (NQ, Recall@1)
+### Document Reranking (NQ)
 
-| Method | Recall@1 |
-|--------|----------|
-| BGE | 35.60% |
-| SentenceBERT | 54.70% |
-| BgeLLMEmb | 59.90% |
-| BgeReranker | 62.90% |
-| LongLLMLingua | 66.30% |
-| **PolyCompressor (MVIG)** | **73.00%** |
-
-### Ablation Study (NQ)
-
-| MVIG | SP | DAKE | Tokens | EM | F1 |
-|------|----|------|--------|-----|-----|
-| ✗ | ✗ | ✗ | 701 | 15.25 | 26.13 |
-| ✓ | ✗ | ✗ | 638 | 40.18 | 53.88 |
-| ✓ | ✓ | ✗ | 352 | 41.00 | 52.72 |
-| ✓ | ✓ | ✓ | **97** | **42.24** | **54.99** |
-
-*Each component contributes to both compression and accuracy improvements.*
+| Methods               | @1   | @2   | @3   | @4   | @5   | @10  | @15  | @20  |
+|-----------------------|------|------|------|------|------|------|------|------|
+| LLMLingua             | 4.40 | 7.10 | 9.30 | 12.20 | 14.80 | 29.30 | 47.40 | 100.00 |
+| BM25                  | 8.00 | 13.90 | 19.60 | 24.60 | 29.40 | 52.10 | 73.50 | 100.00 |
+| BGE                   | 35.60 | 49.50 | 57.80 | 63.80 | 69.00 | 84.40 | 92.40 | 100.00 |
+| Gzip                  | 50.10 | 55.70 | 59.70 | 63.00 | 65.80 | 77.20 | 87.60 | 100.00 |
+| Jina                  | 52.20 | 66.00 | 74.00 | 78.60 | 82.20 | 92.20 | 97.00 | 100.00 |
+| SentenceBert          | 54.70 | 66.60 | 73.00 | 77.50 | 81.30 | 91.50 | 96.20 | 100.00 |
+| BgeLLMEmb             | 59.90 | 73.30 | 80.30 | 85.10 | 87.80 | 94.60 | 98.10 | 100.00 |
+| BgeReranker           | 62.90 | 74.50 | 80.00 | 83.40 | 85.80 | 93.90 | 97.90 | 100.00 |
+| LongLLMLingua         | 66.30 | 77.50 | 82.70 | 86.10 | 88.40 | 95.20 | 98.50 | 100.00 |
+| Perception            | 70.50 | 80.50 | 85.00 | 87.80 | 89.00 | 94.70 | 98.30 | 100.00 |
+| Ours (w/o MQG)        | 67.21 | 78.30 | 82.90 | 86.30 | 88.50 | 95.40 | 98.40 | 100.00 |
+| **Ours (MVIG)**       | **73.00** | **81.90** | **86.30** | **88.70** | **90.30** | **95.40** | **98.50** | **100.00** |
 
 ## 🚀 Quick Start
 
