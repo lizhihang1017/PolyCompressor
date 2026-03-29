@@ -177,7 +177,7 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
 
 *PolyCompressor achieves superior compression while maintaining or improving answer quality across all benchmarks.*
 
-### Document Reranking (NQ)
+### Document Reranking (NQ，Recall@K)
 
 | Methods               | @1   | @2   | @3   | @4   | @5   | @10  | @15  | @20  |
 |-----------------------|------|------|------|------|------|------|------|------|
