@@ -2,7 +2,6 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![arXiv](https://img.shields.io/badge/arXiv-2412.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2412.XXXXX)
 
 A **training-free** framework that compresses retrieved contexts in Retrieval-Augmented Generation (RAG) by progressively reducing **epistemic**, **aleatoric**, and **logical uncertainties**. Achieves **97.48% token reduction** (~40× compression) while improving answer accuracy by **3.69 EM points** over uncompressed baselines.
 
@@ -192,7 +191,6 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
 | BgeReranker           | 62.90 | 74.50 | 80.00 | 83.40 | 85.80 | 93.90 | 97.90 | 100.00 |
 | LongLLMLingua         | 66.30 | 77.50 | 82.70 | 86.10 | 88.40 | 95.20 | 98.50 | 100.00 |
 | Perception            | 70.50 | 80.50 | 85.00 | 87.80 | 89.00 | 94.70 | 98.30 | 100.00 |
-| Ours (w/o MQG)        | 67.21 | 78.30 | 82.90 | 86.30 | 88.50 | 95.40 | 98.40 | 100.00 |
 | **Ours (MVIG)**       | **73.00** | **81.90** | **86.30** | **88.70** | **90.30** | **95.40** | **98.50** | **100.00** |
 
 ## 🚀 Quick Start
