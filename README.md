@@ -1,4 +1,4 @@
-# PolyCompressor: Uncertainty-Aware Context Compression for RAG
+# Uncertainty-Aware Context Compression for Retrieval-Augmented Generation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
@@ -17,7 +17,33 @@ Retrieval-Augmented Generation (RAG) systems often suffer from information overl
 - **Logical Uncertainty**: Insufficient evidence — does the compressed context support reasoning?
 
 **PolyCompressor** addresses all three through a progressive, uncertainty-aware distillation pipeline:
-
+┌─────────────────────────────────────────────────────────────────┐
+│ POLYCOMPRESSOR FRAMEWORK │
+├─────────────────────────────────────────────────────────────────┤
+│ │
+│ Phase I: Epistemic Uncertainty Reduction │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ Multi-Query Generator (MQG) │ │
+│ │ • Expands ambiguous queries into intent distributions │ │
+│ │ • Generates K query variants with importance weights │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│ ↓ │
+│ Phase II: Aleatoric Uncertainty Reduction │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ Hierarchical Evidence Refiner │ │
+│ │ • Macro-pruning: MVIG (Multi-View Information Gain) │ │
+│ │ • Micro-pruning: Semantic Projection │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│ ↓ │
+│ Phase III: Logical Uncertainty Reduction │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ Dynamic Awareness Knowledge Extractor (DAKE) │ │
+│ │ • Infers logical requirements from query │ │
+│ │ • Ensures causal sufficiency and logical coherence │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│ ↓ │
+│ Concise, Sufficient Context │
+└─────────────────────────────────────────────────────────────────┘
 
 ## ✨ Key Features
 
